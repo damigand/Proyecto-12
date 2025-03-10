@@ -1,0 +1,63 @@
+#access {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+}
+
+#access.active #login {
+    opacity: 1;
+}
+
+#access.active #register {
+    opacity: 0;
+}
+
+@media (min-width: 650px) {
+    #access {
+        width: 600px;
+        height: 400px;
+    }
+
+    #access.active #login {
+        transform: translateX(100%);
+    }
+
+    #access.active #register {
+        transform: translateX(100%);
+    }
+
+    #access.active .toggle-container {
+        transform: translateX(-100%);
+    }
+
+    #access.active .toggle {
+        transform: translateX(50%);
+    }
+}
+
+@media (max-width: 650px) {
+    #access {
+        width: 300px;
+        height: 500px;
+    }
+
+    #access.active #login {
+        transform: translateY(100%);
+    }
+
+    #access.active #register {
+        transform: translateY(50%);
+    }
+
+    #access.active .toggle-container {
+        transform: translateY(-100%);
+    }
+
+    #access.active .toggle {
+        transform: translateY(50%);
+    }
+}

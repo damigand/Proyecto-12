@@ -11,12 +11,12 @@ const Home = () => {
             <NavLink to={"/bingo"} className="bombs home-button">
                 <div>BOMBS</div>
             </NavLink>
-            <div className="access home-button">
+            <li className="access home-button">
                 Still don't have an account?
                 <NavLink to={"/access"} className="register-button primary-button">
                     <span>REGISTER</span>
                 </NavLink>
-            </div>
+            </li>
         </ul>
     );
 };

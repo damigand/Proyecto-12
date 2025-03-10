@@ -3,10 +3,10 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import "./index.css";
 import App from "./App.jsx";
-import Access from "./components/Access/Access";
-import Bingo from "./components/Bingo/Bingo";
-import Home from "./components/Home/Home";
-import Bombs from "./components/Bombs/Bombs";
+import Access from "./pages/Access/Access";
+import Bingo from "./pages/Bingo/Bingo";
+import Home from "./pages/Home/Home";
+import Bombs from "./pages/Bombs/Bombs";
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
