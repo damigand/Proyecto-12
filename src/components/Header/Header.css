@@ -1,0 +1,18 @@
+header {
+    position: fixed;
+    width: 100%;
+}
+
+#header {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    height: var(--header-height);
+    align-items: center;
+}
+
+.link-access {
+    margin-left: auto;
+}

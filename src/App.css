@@ -1,0 +1,16 @@
+body {
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: var(--header-height);
+}
+
+.primary-button {
+    padding: 4px 12px;
+    border-radius: 5px;
+}
