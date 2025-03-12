@@ -1,0 +1,32 @@
+#bombs {
+    height: 100%;
+    max-height: 500px;
+}
+
+.bomb-panel {
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid red;
+    border-radius: 5px;
+    aspect-ratio: 1;
+}
+
+.empty-bomb-game {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.current-bomb-game {
+    display: grid;
+    width: 100%;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    aspect-ratio: 1;
+}

@@ -1,0 +1,6 @@
+#bombs {
+    display: grid;
+    grid-template-columns: minmax(200px, 2fr) 1fr;
+    gap: 20px;
+    margin: auto;
+}
