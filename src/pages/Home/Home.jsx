@@ -8,7 +8,7 @@ const Home = () => {
             <NavLink to={"/bingo"} className="bingo home-button">
                 <div>BINGO</div>
             </NavLink>
-            <NavLink to={"/bingo"} className="bombs home-button">
+            <NavLink to={"/bombs"} className="bombs home-button">
                 <div>BOMBS</div>
             </NavLink>
             <li className="access home-button">
