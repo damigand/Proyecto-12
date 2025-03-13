@@ -11,7 +11,11 @@ const Cell = memo(({ bomb, index, handleClick }) => {
         text = "Empty";
     }
     return (
-        <div className="bomb" onClick={() => handleClick(index)}>
+        <div
+            className="bomb"
+            onClick={() => {
+                handleClick(index, bomb.bomb);
+            }}>
             {text}
         </div>
     );
