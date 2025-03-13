@@ -21,6 +21,11 @@ const links = [
         string: "Access",
         url: "/access",
         class: "link-access"
+    },
+    {
+        string: "Ajustes",
+        url: "settings",
+        class: "link-settings"
     }
 ];
 

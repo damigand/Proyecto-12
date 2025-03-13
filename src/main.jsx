@@ -7,6 +7,7 @@ import Access from "./pages/Access/Access";
 import Bingo from "./pages/Bingo/Bingo";
 import Home from "./pages/Home/Home";
 import Bombs from "./pages/Bombs/Bombs";
+import Settings from "./pages/Settings/Settings";
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById("root")).render(
                     <Route path="access" element={<Access />} />
                     <Route path="bingo" element={<Bingo />} />
                     <Route path="bombs" element={<Bombs />} />
+                    <Route path="settings" element={<Settings />} />
                 </Route>
             </Routes>
         </BrowserRouter>

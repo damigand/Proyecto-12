@@ -1,0 +1,5 @@
+.bingo-user-numbers {
+    grid-row: 1 / 4;
+    grid-column: 3 / 4;
+    border: 1px solid coral;
+}
