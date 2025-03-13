@@ -1,9 +1,8 @@
 export const reducer = (state, action) => {
     switch (action.type) {
         case "START_GAME":
-            return { ...state, isPlaying: !state.isPlaying };
+            return state;
         case "NEXT_NUMBER":
-            if (state.isPlaying) console.log(Math.floor(Math.random() * 40));
             return state;
         case "CROSS_NUMBER":
             return state;
