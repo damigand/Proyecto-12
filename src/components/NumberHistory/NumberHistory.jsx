@@ -1,6 +1,6 @@
 import "./NumberHistory.css";
 
-const NumberHistory = () => {
+const NumberHistory = ({}) => {
     console.log("NumberHistory render.");
     return <div className="bingo-number-history">NumberHistory</div>;
 };

@@ -1,5 +1,17 @@
-.bingo-user-numbers {
-    grid-row: 1 / 4;
-    grid-column: 3 / 4;
+.bingo-user-panel {
+    grid-row: 2 / 4;
+    grid-column: 1 / 3;
     border: 1px solid coral;
+}
+
+.bingo-user-numbers {
+    list-style-type: none;
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    background-color: black;
+    border: 5px solid black;
+    border-radius: 7px;
 }

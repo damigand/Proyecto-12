@@ -1,0 +1,16 @@
+.bingo-user-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.bingo-user-number.can-cross {
+    background-color: lightgreen;
+}
+
+.bingo-user-number.crossed {
+    background-color: rgb(113, 113, 113);
+}

@@ -1,7 +1,7 @@
 import "./Bingo.css";
 import NumberSection from "../../components/NumberSection/NumberSection";
 import NumberHistory from "../../components/NumberHistory/NumberHistory";
-import UserNumbers from "../../components/BingoUserPanel/BingoUserPanel";
+import BingoUserPanel from "../../components/BingoUserPanel/BingoUserPanel";
 import { useReducer, useEffect, useCallback, useMemo } from "react";
 import { initialState, reducer } from "./game";
 import useBingoTimer from "../../hooks/useBingoTimer";
@@ -26,7 +26,7 @@ const Bingo = () => {
         <div id="bingo">
             <NumberSection current={state.currentNumber} previous={state.previousNumber} />
             <NumberHistory />
-            <UserNumbers dispatch={dispatch} />
+            <BingoUserPanel dispatch={dispatch} isPlaying={state.isPlaying} userNumbers={state.userNumbers} />
         </div>
     );
 };
