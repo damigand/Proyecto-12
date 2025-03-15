@@ -14,7 +14,22 @@ export const reducer = (state, action) => {
                 isPlaying: true
             };
         case "NEXT_NUMBER":
-            return state;
+            const numberIndex = Math.floor(Math.random() * state.numbersLeft.length);
+            const newNumber = state.numbersLeft[numberIndex];
+
+            const newState = {
+                ...state,
+                currentNumber: newNumber,
+                previousNumber: state.currentNumber,
+                userNumbers: state.userNumbers.map((number) => {
+                    if (number.number == newNumber) return { ...number, seen: true };
+
+                    return number;
+                }),
+                numbersLeft: state.numbersLeft.filter((number) => number != newNumber)
+            };
+
+            return newState;
         case "CROSS_NUMBER":
             const { userNumber } = action.payload;
 
@@ -58,45 +73,11 @@ export const initialState = {
     isBingo: false,
     isPlaying: false,
     gameNumbers: [
-        { number: 1, seen: false },
-        { number: 2, seen: false },
-        { number: 3, seen: false },
-        { number: 4, seen: false },
-        { number: 5, seen: false },
-        { number: 6, seen: false },
-        { number: 7, seen: false },
-        { number: 8, seen: false },
-        { number: 9, seen: false },
-        { number: 10, seen: false },
-        { number: 11, seen: false },
-        { number: 12, seen: false },
-        { number: 13, seen: false },
-        { number: 14, seen: false },
-        { number: 15, seen: false },
-        { number: 16, seen: false },
-        { number: 17, seen: false },
-        { number: 18, seen: false },
-        { number: 19, seen: false },
-        { number: 20, seen: false },
-        { number: 21, seen: false },
-        { number: 22, seen: false },
-        { number: 23, seen: false },
-        { number: 24, seen: false },
-        { number: 25, seen: false },
-        { number: 26, seen: false },
-        { number: 27, seen: false },
-        { number: 28, seen: false },
-        { number: 29, seen: false },
-        { number: 30, seen: false },
-        { number: 31, seen: false },
-        { number: 32, seen: false },
-        { number: 33, seen: false },
-        { number: 34, seen: false },
-        { number: 35, seen: false },
-        { number: 36, seen: false },
-        { number: 37, seen: false },
-        { number: 38, seen: false },
-        { number: 39, seen: false },
-        { number: 50, seen: false }
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
+        29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40
+    ],
+    numbersLeft: [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
+        29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40
     ]
 };

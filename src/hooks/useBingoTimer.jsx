@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const ms = 2000;
+const ms = 4000;
 
 export default function useBingoTimer(dispatch) {
     const [playing, setPlaying] = useState(false);

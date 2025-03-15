@@ -20,12 +20,12 @@ const Bingo = () => {
         } else {
             stopBingoTimer();
         }
-    }, [state?.isPlaying]);
+    }, [state.isPlaying]);
 
     return (
         <div id="bingo">
             <NumberSection current={state.currentNumber} previous={state.previousNumber} />
-            <NumberHistory />
+            <NumberHistory gameNumbers={state.gameNumbers} numbersLeft={state.numbersLeft} />
             <BingoUserPanel dispatch={dispatch} isPlaying={state.isPlaying} userNumbers={state.userNumbers} />
         </div>
     );
