@@ -1,6 +1,6 @@
 export const reducer = (state, action) => {
     switch (action.type) {
-        case "START_GAME":
+        case "START_GAME": {
             const newUserNumbers = generateNumbers(state.userNumbers.length);
 
             return {
@@ -13,7 +13,8 @@ export const reducer = (state, action) => {
                 }),
                 isPlaying: true
             };
-        case "NEXT_NUMBER":
+        }
+        case "NEXT_NUMBER": {
             const numberIndex = Math.floor(Math.random() * state.numbersLeft.length);
             const newNumber = state.numbersLeft[numberIndex];
 
@@ -30,10 +31,11 @@ export const reducer = (state, action) => {
             };
 
             return newState;
-        case "CROSS_NUMBER":
+        }
+        case "CROSS_NUMBER": {
             const { userNumber } = action.payload;
 
-            return {
+            const newState = {
                 ...state,
                 userNumbers: state.userNumbers.map((number, index) => {
                     if (number.number == userNumber) return { ...number, crossed: !number.crossed };
@@ -41,9 +43,22 @@ export const reducer = (state, action) => {
                     return number;
                 })
             };
-        case "BINGO":
-            return state;
+
+            newState.isBingo = checkBingo(newState);
+
+            return newState;
+        }
+        case "BINGO": {
+            return { ...state, isPlaying: false };
+        }
     }
+};
+
+const checkBingo = (state) => {
+    const numbersLeft = state.numbersLeft;
+    const userNumbers = state.userNumbers;
+
+    return !userNumbers.some((number) => numbersLeft.includes(number.number));
 };
 
 const generateNumbers = (length) => {

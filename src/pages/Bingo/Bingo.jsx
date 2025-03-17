@@ -12,19 +12,27 @@ const Bingo = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const [startBingoTimer, stopBingoTimer] = useBingoTimer(dispatch);
 
-    console.log(state);
-
     useEffect(() => {
         if (state.isPlaying) {
             startBingoTimer();
         } else {
             stopBingoTimer();
         }
-    }, [state.isPlaying]);
+
+        if (state.isBingo) {
+            dispatch({
+                type: "BINGO"
+            });
+        }
+    }, [state.isPlaying, state.isBingo]);
 
     return (
         <div id="bingo">
-            <NumberSection current={state.currentNumber} previous={state.previousNumber} />
+            <NumberSection
+                current={state.currentNumber}
+                previous={state.previousNumber}
+                isPlaying={state.isPlaying}
+            />
             <NumberHistory gameNumbers={state.gameNumbers} numbersLeft={state.numbersLeft} />
             <BingoUserPanel dispatch={dispatch} isPlaying={state.isPlaying} userNumbers={state.userNumbers} />
         </div>

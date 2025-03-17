@@ -8,7 +8,9 @@ const BingoUserNumber = memo(({ number, crossNumber }) => {
             className={`bingo-user-number${number.seen && !number.crossed ? " can-cross" : ""}${
                 number.crossed ? " crossed" : ""
             }`}
-            onClick={() => crossNumber(number.number)}>
+            onClick={() => {
+                if (number.seen && !number.crossed) crossNumber(number.number);
+            }}>
             {number.number}
         </li>
     );
