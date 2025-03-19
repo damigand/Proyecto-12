@@ -10,7 +10,7 @@ main {
     padding-top: var(--header-height);
 }
 
-.primary-button {
-    padding: 4px 12px;
-    border-radius: 5px;
+#app.dark {
+    --bg-color: black;
+    --text-color: white;
 }

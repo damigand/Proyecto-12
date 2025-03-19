@@ -1,5 +1,7 @@
 :root {
     --header-height: 70px;
+    --bg-color: white;
+    --text-color: black;
 }
 
 * {

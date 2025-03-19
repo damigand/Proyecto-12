@@ -83,6 +83,6 @@
 
 .bingo-section-timer.active::after {
     animation-name: timer;
-    animation-duration: 2s;
+    animation-duration: var(--animation-duration);
     animation-iteration-count: infinite;
 }

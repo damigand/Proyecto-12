@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
-
-const ms = 2000;
+import { useState, useEffect, useContext } from "react";
+import { SettingsContext } from "../components/SettingsProvider/SettingsProvider";
 
 export default function useBingoTimer(dispatch) {
     const [playing, setPlaying] = useState(false);
+
+    const { bingoTimer } = useContext(SettingsContext);
 
     //Use effect que pone en marcha o para el intervalo de tiempo
     //De los números en función del estado de la partida.
@@ -14,7 +15,7 @@ export default function useBingoTimer(dispatch) {
             dispatch({
                 type: "NEXT_NUMBER"
             });
-        }, ms);
+        }, bingoTimer);
 
         return () => clearInterval(interval);
     }, [playing]);

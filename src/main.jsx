@@ -8,19 +8,22 @@ import Bingo from "./pages/Bingo/Bingo";
 import Home from "./pages/Home/Home";
 import Bombs from "./pages/Bombs/Bombs";
 import Settings from "./pages/Settings/Settings";
+import SettingsProvider from "./components/SettingsProvider/SettingsProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
         <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App />}>
-                    <Route index element={<Home />} />
-                    <Route path="access" element={<Access />} />
-                    <Route path="bingo" element={<Bingo />} />
-                    <Route path="bombs" element={<Bombs />} />
-                    <Route path="settings" element={<Settings />} />
-                </Route>
-            </Routes>
+            <SettingsProvider>
+                <Routes>
+                    <Route path="/" element={<App />}>
+                        <Route index element={<Home />} />
+                        <Route path="access" element={<Access />} />
+                        <Route path="bingo" element={<Bingo />} />
+                        <Route path="bombs" element={<Bombs />} />
+                        <Route path="settings" element={<Settings />} />
+                    </Route>
+                </Routes>
+            </SettingsProvider>
         </BrowserRouter>
     </StrictMode>
 );
