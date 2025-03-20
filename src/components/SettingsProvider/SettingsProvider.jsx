@@ -1,9 +1,8 @@
-import { useCallback } from "react";
 import { useState } from "react";
 import { createContext, useEffect } from "react";
 
 const contextStructure = {
-    theme: false, //false = light, true: dark
+    theme: null,
     bingoTimer: 0,
     primary: "",
     secondary: ""
@@ -12,7 +11,7 @@ const contextStructure = {
 export const SettingsContext = createContext(contextStructure);
 
 const SettingsProvider = ({ children }) => {
-    const [theme, setTheme] = useState(() => localStorage.getItem("theme") || false);
+    const [theme, setTheme] = useState(() => localStorage.getItem("theme") === "true" || false);
     const [bingoTimer, setBingoTimer] = useState(() => localStorage.getItem("bingoTimer") || 1000);
     const [primary, setPrimary] = useState(() => localStorage.getItem("primary") || "primaryColor");
     const [secondary, setSecondary] = useState(() => localStorage.getItem("secondary") || "secondaryColor");

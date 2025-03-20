@@ -1,9 +1,3 @@
-:root {
-    --header-height: 70px;
-    --bg-color: white;
-    --text-color: black;
-}
-
 * {
     margin: 0;
     padding: 0;

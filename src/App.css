@@ -10,6 +10,12 @@ main {
     padding-top: var(--header-height);
 }
 
+#app {
+    --bg-color: white;
+    --text-color: black;
+    --header-height: 70px;
+}
+
 #app.dark {
     --bg-color: black;
     --text-color: white;

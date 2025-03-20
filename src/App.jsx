@@ -8,8 +8,10 @@ function App() {
     console.log("App render.");
 
     const { theme } = useContext(SettingsContext);
+    console.log(theme);
+
     return (
-        <div id="app" className={theme ? "dark" : ""}>
+        <div id="app" className={theme === true ? "dark" : undefined}>
             <header>
                 <Header />
             </header>

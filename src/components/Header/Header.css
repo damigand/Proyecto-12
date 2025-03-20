@@ -8,7 +8,7 @@ header {
     list-style-type: none;
     gap: 20px;
     padding: 0px 20px;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     height: var(--header-height);
     align-items: center;
 }
