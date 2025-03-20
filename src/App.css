@@ -2,21 +2,24 @@ body {
     height: 100vh;
 }
 
+#app {
+    --bg-color: white;
+    --text-color: black;
+    --primary: #6495ed;
+    --secondary: #edbc64;
+    --header-height: 70px;
+}
+
+#app.dark {
+    --bg-color: rgb(10, 10, 10);
+    --text-color: white;
+}
+
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     padding-top: var(--header-height);
-}
-
-#app {
-    --bg-color: white;
-    --text-color: black;
-    --header-height: 70px;
-}
-
-#app.dark {
-    --bg-color: black;
-    --text-color: white;
+    background-color: var(--bg-color);
 }
