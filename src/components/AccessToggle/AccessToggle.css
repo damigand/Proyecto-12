@@ -16,14 +16,32 @@
 .toggle {
     transition: all 0.5s ease;
     position: relative;
-    background-color: blue;
+    background-color: var(--primary);
 }
 
 .toggle-section {
     position: absolute;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: center;
     align-items: center;
+}
+
+.toggle-section button {
+    transition: all 0.2s ease;
+    padding: 6px 12px;
+    border: 1px solid var(--secondary);
+    background: none;
+    color: var(--secondary);
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-section button:hover {
+    background-color: var(--secondary);
+    color: white;
 }
 
 @media (min-width: 650px) {

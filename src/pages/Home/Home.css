@@ -7,11 +7,10 @@
     max-width: 600px;
     max-height: 400px;
     gap: 20px;
+    z-index: 1;
 }
 
 .home-button {
-    transition: box-shadow 0.2s ease;
-    border: 2px solid var(--primary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,17 +18,16 @@
     text-decoration: none;
     color: var(--primary);
     font-size: 20px;
-}
-
-.home-button:hover {
-    box-shadow: 0 4px 10px 4px rgba(from var(--) r g b / 0.2);
+    position: relative;
+    background-color: var(--bg-color);
+    border: 1px solid var(--primary);
 }
 
 #home .access {
     grid-column: 1 / 3;
-    border-radius: 0px 0px 20px 20px;
     flex-direction: column;
     gap: 15px;
+    border-radius: 0px 0px 20px 20px;
 }
 
 #home .bingo {
@@ -41,7 +39,16 @@
 }
 
 .register-button {
-    background-color: white;
+    transition: all 0.2s ease;
+    background-color: transparent;
     text-decoration: none;
-    border: 1px solid black;
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+.register-button:hover {
+    background-color: var(--secondary);
+    color: white;
 }
