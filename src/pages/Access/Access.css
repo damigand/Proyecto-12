@@ -3,23 +3,126 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-    border: 1px solid var(--primary);
     border-radius: 10px;
     position: relative;
 }
 
+.form-submit-button {
+    padding: 8px 12px;
+    border: 5px solid var(--secondary);
+    background-color: var(--secondary);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-text,
+.login-text {
+    font-size: 20px;
+}
+
+#access form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#access form input {
+    border: 1px solid var(--secondary);
+    padding: 4px 8px;
+    color: var(--secondary);
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+#access form input:focus {
+    outline: 1px solid var(--secondary);
+}
+
+#access form label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.register-socials {
+    display: flex;
+    gap: 10px;
+}
+
+.social {
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        z-index: -1;
+        opacity: 0;
+    }
+}
+
 #access.active #login {
-    opacity: 1;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 300ms;
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
 }
 
 #access.active #register {
+    animation-name: fadeOut;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+
+#access:not(.active) #register {
     opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 300ms;
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+}
+
+#access:not(.active) #login {
+    animation-name: fadeOut;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+
+#access:not(.active) #login {
+    animation-name: fadeOut;
+    animation-duration: 300ms;
+}
+
+#access.start #login {
+    animation: none;
+    opacity: 0;
+}
+
+#access.start #register {
+    opacity: 1;
+    animation: none;
 }
 
 @media (min-width: 650px) {
     #access {
-        width: 600px;
-        height: 400px;
+        width: 750px;
+        height: 500px;
     }
 
     #access.active #login {
@@ -42,22 +145,22 @@
 @media (max-width: 650px) {
     #access {
         width: 300px;
-        height: 500px;
+        height: 550px;
     }
 
     #access.active #login {
-        transform: translateY(100%);
+        transform: translateY(33%);
     }
 
     #access.active #register {
-        transform: translateY(50%);
+        transform: translateY(33%);
     }
 
     #access.active .toggle-container {
-        transform: translateY(-100%);
+        transform: translateY(-150%);
     }
 
     #access.active .toggle {
-        transform: translateY(50%);
+        transform: translateY(100%);
     }
 }

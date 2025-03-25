@@ -5,8 +5,8 @@ body {
 #app {
     --bg-color: rgb(255, 255, 255);
     --text-color: black;
-    --primary: #538af0;
-    --secondary: #edb244;
+    --primary: #006af4;
+    --secondary: #ff39a3;
     --header-height: 70px;
 }
 
@@ -19,7 +19,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding-top: var(--header-height);
+    height: calc(100% - var(--header-height));
+    z-index: -1;
+    padding-top: calc(var(--header-height) + 25px);
     background-color: var(--bg-color);
 }

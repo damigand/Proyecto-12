@@ -5,15 +5,21 @@ import "./Access.css";
 import AccessToggle from "../../components/AccessToggle/AccessToggle";
 
 const Access = () => {
-    const [active, setActive] = useState(false);
+    const [status, setStatus] = useState({ start: true, active: false });
+
+    const changeStyles = () => {
+        setStatus((prevStatus) => {
+            return { start: false, active: !prevStatus.active };
+        });
+    };
 
     console.log("Access render.");
     return (
         <>
-            <div id="access" className={active ? "active" : ""}>
+            <div id="access" className={`${status.start ? "start" : ""}${status.active ? " active" : ""}`}>
                 <FormLogin />
                 <FormRegister />
-                <AccessToggle handleClick={() => setActive((prevActive) => !prevActive)} />
+                <AccessToggle handleClick={changeStyles} />
             </div>
         </>
     );
