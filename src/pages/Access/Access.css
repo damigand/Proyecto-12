@@ -8,12 +8,18 @@
 }
 
 .form-submit-button {
+    transition: all 0.2s ease;
     padding: 8px 12px;
     border: 5px solid var(--secondary);
     background-color: var(--secondary);
     color: white;
     border-radius: 5px;
     cursor: pointer;
+
+    &:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+    }
 }
 
 .register-text,

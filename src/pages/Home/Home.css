@@ -32,6 +32,32 @@
 
 #home .bingo {
     border-top-left-radius: 20px;
+    z-index: 1;
+    overflow: hidden;
+    color: var(--secondary);
+}
+
+#home .bingo::after {
+    transition: all 0.2s ease;
+    content: "";
+    background-image: url("../../../assets/bingo.avif");
+    background-size: cover;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+#home .bingo:hover {
+    color: transparent;
+}
+
+#home .bingo:hover::after {
+    background-color: rgba(0, 0, 0, 0);
+    width: 110%;
+    height: 110%;
 }
 
 #home .bombs {

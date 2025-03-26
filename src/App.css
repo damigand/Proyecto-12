@@ -5,9 +5,10 @@ body {
 #app {
     --bg-color: rgb(255, 255, 255);
     --text-color: black;
-    --primary: #006af4;
-    --secondary: #ff39a3;
+    --primary: #055e14;
+    --secondary: #38d380;
     --header-height: 70px;
+    height: 100svh;
 }
 
 #app.dark {
@@ -19,7 +20,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100% - var(--header-height));
+    height: 100%;
     z-index: -1;
     padding-top: calc(var(--header-height) + 25px);
     background-color: var(--bg-color);
