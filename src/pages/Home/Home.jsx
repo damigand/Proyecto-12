@@ -8,8 +8,8 @@ const Home = () => {
             <NavLink to={"/bingo"} className="bingo home-button">
                 <div>BINGO</div>
             </NavLink>
-            <NavLink to={"/bombs"} className="bombs home-button">
-                <div>BOMBS</div>
+            <NavLink to={"/mines"} className="mines home-button">
+                <div>MINES</div>
             </NavLink>
             <li className="access home-button">
                 Still don't have an account?

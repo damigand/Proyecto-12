@@ -13,9 +13,9 @@ const links = [
         class: "link-bingo"
     },
     {
-        string: "Bombs",
-        url: "/bombs",
-        class: "link-bombs"
+        string: "Mines",
+        url: "/mines",
+        class: "link-mines"
     },
     {
         string: "Access",

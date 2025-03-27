@@ -1,11 +1,11 @@
-import "./Bombs.css";
+import "./Mines.css";
 import CellsPanel from "../../components/CellsPanel/CellsPanel";
-import BombsActions from "../../components/BombsActions/BombsActions";
+import MinesActions from "../../components/MinesActions/MinesActions";
 import { useReducer } from "react";
 import { reducer, initialState } from "./game";
 
-const Bombs = () => {
-    console.log("Bombs render.");
+const Mines = () => {
+    console.log("Mines render.");
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -20,9 +20,9 @@ const Bombs = () => {
                 isWin={state.win}
                 isLoss={state.loss}
             />
-            <BombsActions dispatch={dispatch} />
+            <MinesActions dispatch={dispatch} />
         </div>
     );
 };
 
-export default Bombs;
+export default Mines;

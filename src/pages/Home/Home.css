@@ -16,11 +16,9 @@
     align-items: center;
     height: 100%;
     text-decoration: none;
-    color: var(--primary);
+    color: var(--secondary);
     font-size: 20px;
     position: relative;
-    background-color: var(--bg-color);
-    border: 1px solid var(--primary);
 }
 
 #home .access {
@@ -28,19 +26,32 @@
     flex-direction: column;
     gap: 15px;
     border-radius: 0px 0px 20px 20px;
+    background-color: var(--primary);
 }
 
 #home .bingo {
     border-top-left-radius: 20px;
+}
+
+#home .bingo,
+#home .mines {
     z-index: 1;
     overflow: hidden;
     color: var(--secondary);
 }
 
 #home .bingo::after {
+    background-image: url("../../../assets/bingo.avif");
+}
+
+#home .mines::after {
+    background-image: url("../../../assets/mines.jpg");
+}
+
+#home .bingo::after,
+#home .mines::after {
     transition: all 0.2s ease;
     content: "";
-    background-image: url("../../../assets/bingo.avif");
     background-size: cover;
     background-blend-mode: darken;
     background-color: rgba(0, 0, 0, 0.7);
@@ -50,17 +61,19 @@
     z-index: -1;
 }
 
-#home .bingo:hover {
+#home .bingo:hover,
+#home .mines:hover {
     color: transparent;
 }
 
-#home .bingo:hover::after {
+#home .bingo:hover::after,
+#home .mines:hover::after {
     background-color: rgba(0, 0, 0, 0);
     width: 110%;
     height: 110%;
 }
 
-#home .bombs {
+#home .mines {
     border-top-right-radius: 20px;
 }
 
