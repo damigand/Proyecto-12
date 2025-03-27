@@ -1,16 +1,37 @@
 .bingo-user-number {
+    --canCross-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    background-color: white;
     border-radius: 5px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    animation-name: canCrossAnim;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
 }
 
 .bingo-user-number.can-cross {
-    background-color: lightgreen;
+    --can-Cross-color: var(--secondary);
+}
+
+@keyframes canCrossAnim {
+    0% {
+        background-color: transparent;
+    }
+    25% {
+        background-color: rgba(from var(--can-Cross-color) r g b / 0.7);
+    }
+    50% {
+        background-color: transparent;
+    }
 }
 
 .bingo-user-number.crossed {
-    background-color: rgb(113, 113, 113);
+    border-color: transparent;
+    text-decoration: line-through;
+    background-color: rgba(from var(--primary) r g b / 0.5);
+    animation-iteration-count: 0;
+    animation-fill-mode: backwards;
 }

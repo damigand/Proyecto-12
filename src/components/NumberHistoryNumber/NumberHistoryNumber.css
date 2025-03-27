@@ -1,13 +1,16 @@
 .bingo-history-number {
+    transition: all 0.2s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
     border-radius: 50%;
     aspect-ratio: 1;
-    opacity: 0.2;
+    color: var(--primary);
+    border: 1px solid var(--primary);
 }
 
 .bingo-history-number.seen {
-    opacity: 1;
+    border-color: var(--secondary);
+    color: var(--secondary);
+    border-width: 2px;
 }
