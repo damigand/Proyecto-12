@@ -12,7 +12,7 @@ const Mines = () => {
     console.log(state);
 
     return (
-        <div id="bombs">
+        <div id="mines">
             <CellsPanel
                 gameState={state.gameState}
                 isPlaying={state.isPlaying}
@@ -20,7 +20,12 @@ const Mines = () => {
                 isWin={state.win}
                 isLoss={state.loss}
             />
-            <MinesActions dispatch={dispatch} />
+            <MinesActions
+                dispatch={dispatch}
+                isPlaying={state.isPlaying}
+                squaresCleared={state.squaresCleared}
+                squaresLeft={state.squaresLeft}
+            />
         </div>
     );
 };

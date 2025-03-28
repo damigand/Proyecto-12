@@ -1,20 +1,20 @@
 import { memo } from "react";
 import "./Cell.css";
 
-const Cell = memo(({ bomb, index, handleClick }) => {
+const Cell = memo(({ mine, index, handleClick }) => {
     console.log("Cell render: ", index);
     var text = "Cell";
-    if (bomb.bomb && !bomb.isHidden) {
-        text = "Bomb";
+    if (mine.mine && !mine.isHidden) {
+        text = "Mine";
     }
-    if (!bomb.bomb && !bomb.isHidden) {
+    if (!mine.mine && !mine.isHidden) {
         text = "Empty";
     }
     return (
         <div
-            className="bomb"
+            className="mine"
             onClick={() => {
-                handleClick(index, bomb.bomb);
+                handleClick(index, mine.mine);
             }}>
             {text}
         </div>

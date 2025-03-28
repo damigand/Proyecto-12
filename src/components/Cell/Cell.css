@@ -1,9 +1,10 @@
-.bomb {
+.mine {
     width: 100%;
     aspect-ratio: 1;
-    border: 1px solid green;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid var(--primary);
+    cursor: pointer;
 }

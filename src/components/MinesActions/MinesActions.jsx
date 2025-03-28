@@ -1,7 +1,7 @@
 import { memo, useCallback, useRef } from "react";
 import "./MinesActions.css";
 
-const MinesActions = memo(({ dispatch }) => {
+const MinesActions = memo(({ dispatch, isPlaying, squaresLeft, squaresCleared }) => {
     console.log("Render MinesActions.");
 
     const inputRef = useRef(null);
@@ -16,15 +16,42 @@ const MinesActions = memo(({ dispatch }) => {
         });
     });
 
+    const checkNumber = (e) => {
+        if (e.target?.value > 25) {
+            e.target.value = 25;
+            e.target.classList.add("overload");
+            setTimeout(() => {
+                e.target.classList.remove("overload");
+            }, 1000);
+        }
+    };
+
     return (
-        <div className="mines-actions">
-            <label htmlFor="mine-number">
-                <input type="number" id="mine-number" name="mine-number" ref={inputRef} />
-            </label>
-            <button type="button" onClick={setMines}>
-                Jugar
-            </button>
-        </div>
+        <>
+            {!isPlaying && (
+                <div className="mines-actions">
+                    <label htmlFor="mine-number">
+                        <span>Number of mines</span>
+                        <input
+                            type="number"
+                            id="mine-number"
+                            name="mine-number"
+                            ref={inputRef}
+                            onChange={(e) => checkNumber(e)}
+                        />
+                    </label>
+                    <button type="button" className="play-mines-button" onClick={setMines}>
+                        Jugar
+                    </button>
+                </div>
+            )}
+            {isPlaying && (
+                <div className="squares-info">
+                    <div className="squares-cleared">Cleared: {squaresCleared}</div>
+                    <div className="squares-left">Left: {squaresLeft}</div>
+                </div>
+            )}
+        </>
     );
 });
 

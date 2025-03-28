@@ -12,6 +12,8 @@ const Bingo = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const [startBingoTimer, stopBingoTimer] = useBingoTimer(dispatch);
 
+    console.log(state);
+
     useEffect(() => {
         if (state.isPlaying) {
             startBingoTimer();
