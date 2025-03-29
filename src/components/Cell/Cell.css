@@ -7,4 +7,17 @@
     justify-content: center;
     border: 1px solid var(--primary);
     cursor: pointer;
+    opacity: 0;
+    animation-name: cellStartAnim;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cellStartAnim {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

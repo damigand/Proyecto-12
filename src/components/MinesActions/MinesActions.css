@@ -25,7 +25,7 @@
     text-align: center;
 }
 
-@keyframes fadeOut {
+@keyframes fadeOutMines {
     from {
         border-color: red;
         outline: 1px solid red;
@@ -37,7 +37,7 @@
 }
 
 #mine-number.overload {
-    animation-name: fadeOut;
+    animation-name: fadeOutMines;
     animation-duration: 1s;
 }
 

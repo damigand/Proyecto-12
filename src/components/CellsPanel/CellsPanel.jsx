@@ -23,14 +23,20 @@ const CellsPanel = ({ gameState, isPlaying, isWin, isLoss, dispatch }) => {
         }
     }, []);
 
-    console.log(typeof isWin, typeof isLoss);
-
     return (
         <div className={`mine-panel${isPlaying ? " playing" : ""}`}>
             {isPlaying && (
                 <div className="current-mine-game">
                     {gameState.map((mine, index) => {
-                        return <Cell key={index} mine={mine} index={index} handleClick={revealCell} />;
+                        return (
+                            <Cell
+                                key={index}
+                                mine={mine}
+                                index={index}
+                                handleClick={revealCell}
+                                delay={(index + 1) * 20} //Delay de 20 por cada celda para una animación chula.
+                            />
+                        );
                     })}
                 </div>
             )}
