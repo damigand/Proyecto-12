@@ -2,7 +2,7 @@ import "./Bingo.css";
 import NumberSection from "../../components/NumberSection/NumberSection";
 import NumberHistory from "../../components/NumberHistory/NumberHistory";
 import BingoUserPanel from "../../components/BingoUserPanel/BingoUserPanel";
-import { useReducer, useEffect, useCallback, useMemo } from "react";
+import { useReducer, useEffect } from "react";
 import { initialState, reducer } from "./game";
 import useBingoTimer from "../../hooks/useBingoTimer";
 
@@ -17,7 +17,9 @@ const Bingo = () => {
     useEffect(() => {
         if (state.isPlaying) {
             startBingoTimer();
-        } else {
+        }
+
+        if (state.isFinished || !state.isPlaying) {
             stopBingoTimer();
         }
 
@@ -26,7 +28,7 @@ const Bingo = () => {
                 type: "BINGO"
             });
         }
-    }, [state.isPlaying, state.isBingo]);
+    }, [state.isPlaying, state.isBingo, state.isFinished]);
 
     return (
         <div id="bingo">
@@ -34,9 +36,15 @@ const Bingo = () => {
                 current={state.currentNumber}
                 previous={state.previousNumber}
                 isPlaying={state.isPlaying}
+                isFinished={state.isFinished}
             />
             <NumberHistory gameNumbers={state.gameNumbers} numbersLeft={state.numbersLeft} />
-            <BingoUserPanel dispatch={dispatch} isPlaying={state.isPlaying} userNumbers={state.userNumbers} />
+            <BingoUserPanel
+                dispatch={dispatch}
+                isPlaying={state.isPlaying}
+                userNumbers={state.userNumbers}
+                isBingo={state.isBingo}
+            />
         </div>
     );
 };

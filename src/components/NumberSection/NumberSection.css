@@ -40,7 +40,7 @@
 
 .bingo-previous-number {
     animation-name: previous;
-    animation-duration: 1s;
+    animation-duration: var(--animation-duration);
     animation-fill-mode: forwards;
 }
 
@@ -57,7 +57,7 @@
 
 .bingo-current-number {
     animation-name: current;
-    animation-duration: 1s;
+    animation-duration: var(--animation-duration);
 }
 
 .bingo-section-timer {

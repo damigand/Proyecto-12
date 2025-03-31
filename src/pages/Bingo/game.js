@@ -11,23 +11,30 @@ export const reducer = (state, action) => {
 
                     return { ...number, number: newUserNumbers[index], seen: false, crossed: false };
                 }),
-                isPlaying: true
+                isPlaying: true,
+                isBingo: false,
+                isFinished: false,
+                numbersLeft: Array.from({ length: 40 }, (_, i) => i + 1),
+                currentNumber: 0,
+                previousNumber: 0
             };
         }
         case "NEXT_NUMBER": {
             const numberIndex = Math.floor(Math.random() * state.numbersLeft.length);
             const newNumber = state.numbersLeft[numberIndex];
+            const newNumbersLeft = state.numbersLeft.filter((number) => number != newNumber);
 
             const newState = {
                 ...state,
-                currentNumber: newNumber,
-                previousNumber: state.currentNumber,
+                currentNumber: newNumber || state.currentNumber,
+                previousNumber: state.currentNumber || state.previousNumber,
                 userNumbers: state.userNumbers.map((number) => {
                     if (number.number == newNumber) return { ...number, seen: true };
 
                     return number;
                 }),
-                numbersLeft: state.numbersLeft.filter((number) => number != newNumber)
+                numbersLeft: newNumbersLeft,
+                isFinished: newNumbersLeft.length < 1 ? true : false
             };
 
             return newState;
@@ -49,7 +56,7 @@ export const reducer = (state, action) => {
             return newState;
         }
         case "BINGO": {
-            return { ...state, isPlaying: false };
+            return { ...state, isFinished: true };
         }
     }
 };
@@ -58,13 +65,13 @@ const checkBingo = (state) => {
     const numbersLeft = state.numbersLeft;
     const userNumbers = state.userNumbers;
 
-    return !userNumbers.some((number) => numbersLeft.includes(number.number));
+    return !userNumbers.some((number) => numbersLeft.includes(number.number) || !number.crossed);
 };
 
 const generateNumbers = (length) => {
     const numbers = new Set();
     while (numbers.size < length) {
-        numbers.add(Math.floor(Math.random() * 41));
+        numbers.add(Math.round(Math.random() * 40));
     }
 
     return Array.from(numbers);
@@ -87,6 +94,7 @@ export const initialState = {
     ],
     isBingo: false,
     isPlaying: false,
+    isFinished: false,
     gameNumbers: [
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
         29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40

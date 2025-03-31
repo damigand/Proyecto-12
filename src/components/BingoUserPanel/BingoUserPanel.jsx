@@ -2,7 +2,7 @@ import { memo, useCallback } from "react";
 import "./BingoUserPanel.css";
 import BingoUserNumber from "../BingoUserNumber/BingoUserNumber";
 
-const BingoUserPanel = memo(({ dispatch, isPlaying, userNumbers }) => {
+const BingoUserPanel = memo(({ dispatch, isPlaying, isBingo, userNumbers }) => {
     console.log("BingoUserPanel render.");
 
     const toggle = () => {
@@ -20,6 +20,12 @@ const BingoUserPanel = memo(({ dispatch, isPlaying, userNumbers }) => {
         });
     }, []);
 
+    const playAgain = useCallback(() => {
+        dispatch({
+            type: "START_GAME"
+        });
+    }, []);
+
     return (
         <div className={`bingo-user-panel${isPlaying ? " playing" : ""}`}>
             {!isPlaying && (
@@ -27,12 +33,28 @@ const BingoUserPanel = memo(({ dispatch, isPlaying, userNumbers }) => {
                     Start bingo
                 </button>
             )}
-            {isPlaying && (
+            {isPlaying && !isBingo && (
                 <ul className="bingo-user-numbers">
                     {userNumbers.map((number, index) => {
                         return <BingoUserNumber key={index} number={number} crossNumber={crossNumber} />;
                     })}
                 </ul>
+            )}
+            {isPlaying && isBingo && (
+                <div className="bingo-user-finished">
+                    <h3>BINGO!</h3>
+                    <div className="bingo-winning-numbers">
+                        <span>Winning numbers:</span>
+                        <ul>
+                            {userNumbers.map((number, index) => {
+                                return <li key={index}>{number.number}</li>;
+                            })}
+                        </ul>
+                    </div>
+                    <button className="bingo-again-button" onClick={playAgain}>
+                        Play again
+                    </button>
+                </div>
             )}
         </div>
     );
