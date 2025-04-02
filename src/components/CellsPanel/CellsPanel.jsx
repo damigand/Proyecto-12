@@ -2,7 +2,7 @@ import "./CellsPanel.css";
 import Cell from "../Cell/Cell";
 import { useCallback } from "react";
 
-const CellsPanel = ({ gameState, isPlaying, isWin, isLoss, dispatch }) => {
+const CellsPanel = ({ gameState, isPlaying, isWin, isLoss, isFinished, dispatch }) => {
     console.log("Render MinesPanel.");
 
     const revealCell = useCallback((index, isMine) => {
@@ -34,6 +34,7 @@ const CellsPanel = ({ gameState, isPlaying, isWin, isLoss, dispatch }) => {
                                 mine={mine}
                                 index={index}
                                 handleClick={revealCell}
+                                isFinished={isFinished}
                                 delay={(index + 1) * 20} //Delay de 20 por cada celda para una animación chula.
                             />
                         );
@@ -46,16 +47,6 @@ const CellsPanel = ({ gameState, isPlaying, isWin, isLoss, dispatch }) => {
                     {!isWin && !isLoss && (
                         <div className="mine-empty-overlay">
                             <span>No hay minas... ¡De momento!</span>
-                        </div>
-                    )}
-                    {isWin && (
-                        <div className="mine-win-overlay">
-                            <span>GANASTE!</span>
-                        </div>
-                    )}
-                    {isLoss && (
-                        <div className="mine-loss-overlay">
-                            <span>PERDISTE!</span>
                         </div>
                     )}
                 </div>

@@ -71,7 +71,7 @@ export const reducer = (state, action) => {
             };
 
             finalState.loss = true;
-            finalState.isPlaying = false;
+            finalState.isFinished = true;
 
             return finalState;
         default:
@@ -104,6 +104,7 @@ const calculateCells = (mines) => {
 
 export const initialState = {
     isPlaying: false,
+    isFinished: false,
     mines: 0,
     squaresCleared: 0,
     squaresLeft: 0,

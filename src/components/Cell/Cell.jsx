@@ -1,22 +1,24 @@
 import { memo } from "react";
 import "./Cell.css";
 
-const Cell = memo(({ mine, index, handleClick, delay }) => {
+const Cell = memo(({ mine, index, handleClick, delay, isFinished }) => {
     console.log("Cell render: ", index);
-    var iconClass = "Cell";
+    var icon = <i class="bx bx-question-mark icon"></i>;
     if (mine.mine && !mine.isHidden) {
-        iconClass = "Mine";
+        icon = <i class="bx bxs-bomb icon bomb"></i>;
     }
     if (!mine.mine && !mine.isHidden) {
-        iconClass = "Empty";
+        icon = <i class="bx bx-check icon empty"></i>;
     }
     return (
         <div
             style={{ animationDelay: `${delay}ms` }}
             className="mine"
             onClick={() => {
-                handleClick(index, mine.mine);
-            }}></div>
+                if (!isFinished) handleClick(index, mine.mine);
+            }}>
+            {icon}
+        </div>
     );
 });
 

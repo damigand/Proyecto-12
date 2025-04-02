@@ -17,14 +17,16 @@ const Mines = () => {
                 gameState={state.gameState}
                 isPlaying={state.isPlaying}
                 dispatch={dispatch}
-                isWin={state.win}
-                isLoss={state.loss}
+                isFinished={state.isFinished}
             />
             <MinesActions
                 dispatch={dispatch}
                 isPlaying={state.isPlaying}
                 squaresCleared={state.squaresCleared}
                 squaresLeft={state.squaresLeft}
+                isFinished={state.isFinished}
+                isLoss={state.isLoss}
+                isWin={state.isWin}
             />
         </div>
     );

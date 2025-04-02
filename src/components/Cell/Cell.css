@@ -1,18 +1,3 @@
-.mine {
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--primary);
-    cursor: pointer;
-    opacity: 0;
-    animation-name: cellStartAnim;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-}
-
 @keyframes cellStartAnim {
     from {
         opacity: 0;
@@ -20,4 +5,43 @@
     to {
         opacity: 1;
     }
+}
+.mine {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--secondary);
+    cursor: pointer;
+    opacity: 0;
+    animation-name: cellStartAnim;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    transition: all 0.2s ease;
+}
+
+.mine:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.icon {
+    font-size: 200%;
+}
+
+.mine:has(.empty) {
+    color: var(--primary);
+    background-color: var(--secondary);
+}
+
+.mine:has(.empty):hover {
+    border: 1px solid var(--secondary);
+}
+
+.mine:has(.bomb) {
+    color: black;
+    background-color: indianred;
+    border: 1px solid indianred;
 }
