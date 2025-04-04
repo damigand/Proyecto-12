@@ -6,3 +6,7 @@
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
 }
+
+body {
+    height: 100vh;
+}

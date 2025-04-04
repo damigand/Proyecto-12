@@ -1,7 +1,3 @@
-body {
-    height: 100vh;
-}
-
 #app {
     --bg-color: rgb(255, 255, 255);
     --text-color: black;

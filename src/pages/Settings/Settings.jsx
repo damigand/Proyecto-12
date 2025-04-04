@@ -1,24 +1,34 @@
-import { useRef } from "react";
 import "./Settings.css";
 
 import { SettingsContext } from "../../components/SettingsProvider/SettingsProvider";
 import { useContext } from "react";
+import useMessage from "../../hooks/useMessages";
 
 const Settings = () => {
     console.log("Settings render.");
 
     const context = useContext(SettingsContext);
 
-    const themeRef = useRef(context.theme);
-    const bingoRef = useRef(context.bingoTimer);
-    const primaryRef = useRef(context.primary);
-    const secondaryRef = useRef(context.secondary);
+    const [showMessage, changeMessage] = useMessage("Guardado.");
+
+    const cambiar = () => {
+        showMessage();
+    };
 
     return (
         <div id="settings">
             <div className="settings-theme">
-                <button onClick={() => context.setTheme(false)}>Set light</button>
-                <button onClick={() => context.setTheme(true)}>Set dark</button>
+                <button onClick={() => context.setTheme(false)}>Light mode</button>
+                <button onClick={() => context.setTheme(true)}>Dark mode</button>
+                <div className="settings-bingo-timer">
+                    <label htmlFor="bingoTimerSetting" id="bingo-setting">
+                        Bingo timer per number (ms)
+                        <input type="number" />
+                        <button type="button" className="save-bingo-timer" onClick={cambiar}>
+                            Guardar
+                        </button>
+                    </label>
+                </div>
             </div>
         </div>
     );
