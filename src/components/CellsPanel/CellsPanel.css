@@ -1,25 +1,18 @@
-#mines {
-    height: 100%;
-    max-height: 500px;
-    color: var(--secondary);
-}
-
 .mine-panel {
     width: 100%;
-    max-width: 500px;
     border-radius: 5px;
     aspect-ratio: 1;
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .mine-panel:not(.playing) {
-    border: 1px solid var(--primary);
+    border: 2px solid var(--secondary);
 }
 
 .current-mine-game {
     display: grid;
-    width: 100%;
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(5, 1fr);
     gap: 5px;

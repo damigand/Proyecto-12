@@ -6,22 +6,17 @@ export const reducer = (state, action) => {
             const { mines } = action.payload;
             const newCells = calculateCells(mines);
 
-            //Si una celda está en el mismo estado que estaba en la anterior partida,
-            //Su celda no se re-renderiza.
             return {
                 ...state,
-                win: false,
-                loss: false,
+                isWin: false,
+                isLoss: false,
                 mines: mines,
                 squaresCleared: 0,
                 isPlaying: true,
+                isFinished: false,
                 squaresLeft: cellNumbers - mines,
                 gameState: state.gameState.map((cell, index) => {
-                    if (cell.mine == newCells[index].mine && cell.isHidden == newCells[index].isHidden) {
-                        return cell;
-                    } else {
-                        return { ...cell, ...newCells[index] };
-                    }
+                    return { ...cell, ...newCells[index] };
                 })
             };
         case "REVEAL_CELL":
@@ -53,8 +48,8 @@ export const reducer = (state, action) => {
             }
 
             if (newState.squaresLeft == 0) {
-                newState.win = true;
-                newState.isPlaying = false;
+                newState.isWin = true;
+                newState.isFinished = true;
             }
             return newState;
         case "LOSE_GAME":
@@ -70,10 +65,12 @@ export const reducer = (state, action) => {
                 })
             };
 
-            finalState.loss = true;
+            finalState.isLoss = true;
             finalState.isFinished = true;
 
             return finalState;
+        case "RESTART_MINES":
+            return { ...state, isPlaying: false };
         default:
             return state;
     }
@@ -108,8 +105,8 @@ export const initialState = {
     mines: 0,
     squaresCleared: 0,
     squaresLeft: 0,
-    win: false,
-    loss: false,
+    isWin: false,
+    isLoss: false,
     gameState: [
         { row: 1, col: 1, mine: false, isHidden: true },
         { row: 1, col: 2, mine: false, isHidden: true },

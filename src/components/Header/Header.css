@@ -17,7 +17,7 @@ header {
 .header-link {
     transition: all 0.2s ease;
     text-decoration: none;
-    color: var(--primary);
+    color: var(--secondary);
     position: relative;
     padding: 6px 12px;
 }
@@ -29,13 +29,13 @@ header {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--secondary);
+    background-color: var(--primary);
     width: 0;
     height: 2px;
 }
 
 .header-link:not(.link-access):hover {
-    color: var(--secondary);
+    color: var(--primary);
 }
 
 .header-link:not(.link-access):hover::after {
@@ -45,12 +45,12 @@ header {
 .link-access {
     transition: all 0.2s ease;
     margin-left: auto;
-    border: 1px solid var(--secondary);
-    color: var(--secondary);
+    border: 1px solid var(--primary);
+    color: var(--primary);
     border-radius: 5px;
 }
 
 .link-access:hover {
-    background-color: var(--secondary);
-    color: white;
+    background-color: var(--primary);
+    color: black;
 }

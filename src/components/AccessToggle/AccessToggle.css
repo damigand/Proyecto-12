@@ -8,8 +8,8 @@
 .toggle {
     transition: all 0.5s ease;
     position: relative;
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--primary);
 }
 
 .toggle-section {
@@ -24,17 +24,17 @@
 .toggle-section button {
     transition: all 0.2s ease;
     padding: 6px 12px;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--primary);
     background: none;
-    color: var(--secondary);
+    color: var(--primary);
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .toggle-section button:hover {
-    background-color: var(--secondary);
-    color: white;
+    background-color: var(--primary);
+    color: black;
 }
 
 @media (min-width: 650px) {

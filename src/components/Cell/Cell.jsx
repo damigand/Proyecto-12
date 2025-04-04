@@ -3,12 +3,12 @@ import "./Cell.css";
 
 const Cell = memo(({ mine, index, handleClick, delay, isFinished }) => {
     console.log("Cell render: ", index);
-    var icon = <i class="bx bx-question-mark icon"></i>;
+    var icon = <i className="bx bx-question-mark icon"></i>;
     if (mine.mine && !mine.isHidden) {
-        icon = <i class="bx bxs-bomb icon bomb"></i>;
+        icon = <i className="bx bxs-bomb icon bomb"></i>;
     }
     if (!mine.mine && !mine.isHidden) {
-        icon = <i class="bx bx-check icon empty"></i>;
+        icon = <i className="bx bx-check icon empty"></i>;
     }
     return (
         <div

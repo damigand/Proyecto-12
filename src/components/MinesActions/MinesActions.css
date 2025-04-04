@@ -14,35 +14,40 @@
 }
 
 #mine-number {
-    width: 100px;
+    width: 100%;
+    max-width: 80px;
     margin: auto;
     font-size: 32px;
     background-color: transparent;
-    border: 1px solid var(--primary);
+    border: none;
+    border-bottom: 2px solid var(--primary);
+    background-color: var(--secondary);
     color: var(--primary);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
     text-align: center;
+}
+
+#mine-number:focus {
+    outline: none;
 }
 
 @keyframes fadeOutMines {
     from {
         border-color: red;
-        outline: 1px solid red;
+        color: red;
+        background-color: red;
     }
     to {
         border-color: var(--primary);
-        outline: 1px solid var(--primary);
+        color: var(--primary);
+        background-color: var(--secondary);
     }
 }
 
 #mine-number.overload {
     animation-name: fadeOutMines;
     animation-duration: 1s;
-}
-
-#mine-number:focus {
-    outline: 1px solid var(--primary);
 }
 
 /*Quitar las flechas del input number*/
@@ -63,14 +68,57 @@ input[type="number"] {
 .play-mines-button {
     padding: 12px 24px;
     background-color: transparent;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--primary);
     border-radius: 5px;
     transition: all 0.2s ease;
     cursor: pointer;
-    color: var(--secondary);
+    color: var(--primary);
 }
 
 .play-mines-button:hover {
-    color: white;
-    background-color: var(--secondary);
+    color: black;
+    background-color: var(--primary);
+}
+
+.squares-info {
+    width: 100%;
+    border: 1px solid var(--secondary);
+    padding: 20px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    aspect-ratio: 1 / 2;
+}
+
+.squares-cleared,
+.squares-left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.squares-info-container {
+    color: var(--primary);
+    font-size: 200%;
+    display: flex;
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 60px;
+    border-radius: 5px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.squares-info-container i {
+    font-size: 80px;
+    position: absolute;
+    color: var(--secondary);
+    z-index: -1;
+    opacity: 0.5;
 }
