@@ -4,8 +4,8 @@ import { createContext, useEffect } from "react";
 const contextStructure = {
     theme: null,
     bingoTimer: 0,
-    primary: "",
-    secondary: ""
+    setTheme: () => null,
+    setBingoTimer: () => null
 };
 
 export const SettingsContext = createContext(contextStructure);
@@ -13,19 +13,13 @@ export const SettingsContext = createContext(contextStructure);
 const SettingsProvider = ({ children }) => {
     const [theme, setTheme] = useState(() => localStorage.getItem("theme") === "true" || false);
     const [bingoTimer, setBingoTimer] = useState(() => localStorage.getItem("bingoTimer") || 1000);
-    const [primary, setPrimary] = useState(() => localStorage.getItem("primary") || "primaryColor");
-    const [secondary, setSecondary] = useState(() => localStorage.getItem("secondary") || "secondaryColor");
 
     //Values que actúa como "helper".
     const values = {
         theme: theme,
         bingoTimer: bingoTimer,
-        primary: primary,
-        secondary: secondary,
         setTheme: setTheme,
-        setBingoTimer: setBingoTimer,
-        setPrimary: setPrimary,
-        setSecondary: setSecondary
+        setBingoTimer: setBingoTimer
     };
 
     //useEffect que guarda en localStorage los ajustes gracias a values.
