@@ -11,9 +11,85 @@
     padding: 25px;
 }
 
+#settings button {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    transition: all 0.2s ease;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    &:hover {
+        color: black;
+        background-color: var(--primary);
+    }
+}
+
 .settings-theme {
     display: flex;
     flex-direction: column;
     gap: 10px;
     text-align: center;
+}
+
+.settings-bingo-timer {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-saved {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+#bingo-setting {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#bingoInput {
+    max-width: 100px;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+    background-color: transparent;
+    color: var(--primary);
+    font-size: 24px;
+    border-radius: 5px;
+    border: 1px solid var(--secondary);
+}
+
+#bingoInput:focus {
+    outline: 1px solid var(--secondary);
+}
+
+.save-bingo-timer {
+    max-width: 100px;
+    margin: auto;
+    padding: 4px 12px;
+}
+
+#bingo-setting.error #bingoInput {
+    border: 1px solid red;
+
+    &:focus {
+        outline: 1px solid red;
+    }
+}
+
+.input-error {
+    color: red;
+    display: none;
+}
+
+.input-error.active {
+    display: inline;
 }

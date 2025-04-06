@@ -1,12 +1,21 @@
 import "./Settings.css";
 
 import { SettingsContext } from "../../components/SettingsProvider/SettingsProvider";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 const Settings = () => {
     console.log("Settings render.");
 
     const [timerError, setTimerError] = useState(false);
+    const [saved, setSaved] = useState(false);
+
+    useEffect(() => {
+        if (saved) {
+            setTimeout(() => {
+                setSaved(false);
+            }, 1000);
+        }
+    }, [saved]);
 
     const context = useContext(SettingsContext);
 
@@ -20,6 +29,7 @@ const Settings = () => {
 
         setTimerError(false);
         context.setBingoTimer(timerRef.current.value);
+        setSaved(true);
     };
 
     return (
@@ -32,14 +42,20 @@ const Settings = () => {
                     <i className={`bx bx${context.theme ? "s" : ""}-moon`}></i>Dark mode
                 </button>
                 <div className="settings-bingo-timer">
-                    <label
-                        htmlFor="bingoTimerSetting"
-                        id="bingo-setting"
-                        className={timerError ? "error" : ""}>
+                    <label htmlFor="bingoInput" id="bingo-setting" className={timerError ? "error" : ""}>
                         Bingo timer per number (ms)
-                        <input type="number" ref={timerRef} />
+                        <input type="number" ref={timerRef} id="bingoInput" />
+                        <span className={`input-error${timerError ? " active" : ""}`}>
+                            No puede ser menor a 500 ms.
+                        </span>
                         <button type="button" className="save-bingo-timer" onClick={saveTimer}>
-                            Guardar
+                            {!saved && "Guardar"}
+                            {saved && (
+                                <span className="settings-saved">
+                                    <i className="bx bx-check"></i>
+                                    Guardado
+                                </span>
+                            )}
                         </button>
                     </label>
                 </div>

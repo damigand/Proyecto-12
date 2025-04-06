@@ -1,8 +1,8 @@
 #app {
     --bg-color: rgb(255, 255, 255);
     --text-color: black;
-    --primary: rgb(86, 241, 158);
-    --secondary: rgb(6, 111, 58);
+    --primary: rgb(86, 207, 241);
+    --secondary: rgb(114, 122, 212);
     --header-height: 70px;
     height: 100svh;
 }
@@ -10,6 +10,9 @@
 #app.dark {
     --bg-color: rgb(20, 19, 19);
     --text-color: white;
+
+    --primary: rgb(86, 241, 158);
+    --secondary: rgb(6, 111, 58);
 }
 
 main {
