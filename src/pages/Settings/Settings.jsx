@@ -35,10 +35,10 @@ const Settings = () => {
     return (
         <div id="settings">
             <div className="settings-theme">
-                <button onClick={() => context.setTheme(false)}>
+                <button onClick={() => context.setTheme(false)} className={!context.theme && "active"}>
                     <i className={`bx bx${!context.theme ? "s" : ""}-sun`}></i>Light mode
                 </button>
-                <button onClick={() => context.setTheme(true)}>
+                <button onClick={() => context.setTheme(true)} className={context.theme && "active"}>
                     <i className={`bx bx${context.theme ? "s" : ""}-moon`}></i>Dark mode
                 </button>
                 <div className="settings-bingo-timer">

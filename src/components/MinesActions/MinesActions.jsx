@@ -73,21 +73,14 @@ const MinesActions = memo(
                                 <i className="bx bx-question-mark"></i>
                             </div>
                         </div>
-                        {isWin && (
-                            <div className="mines-actions-win">
-                                <h2>WIN</h2>
-                            </div>
-                        )}
-                        {isLoss && (
-                            <div className="mines-actions-loss">
-                                <h2>LOSS</h2>
-                            </div>
-                        )}
                         {isFinished && (
-                            <div className="mines-actions-finished">
-                                <button className="mines-again-button" onClick={() => playMinesAgain()}>
-                                    Play again
-                                </button>
+                            <div className="mines-actions-end">
+                                <h2 className={isLoss && "loss"}>{(isWin && "WIN") || (isLoss && "LOSS")}</h2>
+                                <div className="mines-actions-finished">
+                                    <button className="mines-again-button" onClick={() => playMinesAgain()}>
+                                        Play again
+                                    </button>
+                                </div>
                             </div>
                         )}
                     </div>

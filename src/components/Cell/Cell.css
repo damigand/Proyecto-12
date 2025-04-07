@@ -27,7 +27,8 @@
     color: var(--primary);
 }
 
-.icon {
+.icon,
+.revealed {
     font-size: 200%;
 }
 
@@ -41,7 +42,13 @@
 }
 
 .mine:has(.bomb) {
-    color: black;
+    color: rgb(225, 141, 141);
     background-color: indianred;
     border: 1px solid indianred;
+}
+
+.mine:has(.revealed) {
+    background-color: transparent;
+    opacity: 0.5;
+    animation: none;
 }

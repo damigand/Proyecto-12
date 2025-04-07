@@ -91,6 +91,10 @@ input[type="number"] {
     aspect-ratio: 1 / 2;
 }
 
+.squares-info:has(.mines-actions-end) {
+    grid-template-rows: repeat(3, 1fr);
+}
+
 .squares-cleared,
 .squares-left {
     height: 100%;
@@ -120,5 +124,33 @@ input[type="number"] {
     position: absolute;
     color: var(--secondary);
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.2;
+}
+
+.mines-actions-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.mines-again-button {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    transition: all 0.2s ease;
+    color: var(--primary);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+
+    &:hover {
+        color: black;
+        background-color: var(--primary);
+    }
+}
+
+.loss {
+    color: indianred;
 }

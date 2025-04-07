@@ -28,6 +28,11 @@
         color: black;
         background-color: var(--primary);
     }
+
+    &.active {
+        color: black;
+        background-color: var(--primary);
+    }
 }
 
 .settings-theme {
