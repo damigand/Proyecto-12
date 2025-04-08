@@ -65,7 +65,7 @@ const FormRegister = memo(() => {
                             },
                             pattern: {
                                 value: /^[A-Za-z]{4}\d{4}$/,
-                                message: "Debe tener 4 letras y 4 números."
+                                message: "Debe tener 4 letras y números."
                             }
                         })}
                     />
