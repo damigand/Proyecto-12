@@ -1,6 +1,7 @@
 import { memo } from "react";
 import "./FormLogin.css";
 import { useForm } from "react-hook-form";
+import FormSocials from "../FormSocials/FormSocials";
 
 const FormLogin = memo(() => {
     console.log("Render FormLogin.");
@@ -22,12 +23,7 @@ const FormLogin = memo(() => {
             <div className="login-text">
                 <span>LOGIN</span>
             </div>
-            <div className="register-socials">
-                <div className="social"></div>
-                <div className="social"></div>
-                <div className="social"></div>
-                <div className="social"></div>
-            </div>
+            <FormSocials />
             <form id="login-form" onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="login-email">
                     Email:

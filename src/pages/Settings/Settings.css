@@ -90,11 +90,11 @@
     }
 }
 
-.input-error {
+#settings .input-error {
     color: red;
     display: none;
 }
 
-.input-error.active {
+#settings .input-error.active {
     display: inline;
 }

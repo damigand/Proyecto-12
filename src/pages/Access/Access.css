@@ -34,6 +34,19 @@
     gap: 15px;
 }
 
+#access .input-error {
+    font-size: 12px;
+    color: indianred;
+}
+
+#access label.error input {
+    border: 1px solid indianred;
+
+    &:focus {
+        outline: 1px solid red;
+    }
+}
+
 #access form input {
     border: 1px solid var(--primary);
     padding: 4px 8px;
@@ -41,6 +54,11 @@
     font-size: 16px;
     border-radius: 3px;
     background-color: transparent;
+}
+
+#access form input::placeholder {
+    font-size: 14px;
+    opacity: 0.6;
 }
 
 #access form input:focus {
@@ -52,25 +70,7 @@
     flex-direction: column;
     gap: 5px;
     color: var(--primary);
-}
-
-.register-socials {
-    display: flex;
-    gap: 10px;
-}
-
-.social {
-    width: 35px;
-    height: 35px;
-    border: 1px solid var(--primary);
-    border-radius: 5px;
-    transition: all 0.2s ease;
-    cursor: pointer;
-
-    &:hover {
-        background-color: var(--primary);
-        color: black;
-    }
+    max-width: 175px;
 }
 
 @keyframes fadeIn {
@@ -178,5 +178,21 @@
 
     #access.active .toggle {
         transform: translateY(100%);
+    }
+
+    #access label {
+        font-size: 13px;
+    }
+
+    #access form:has(.input-error) {
+        gap: 10px;
+    }
+
+    #access form input {
+        padding: 2px 4px;
+    }
+
+    .form-submit-button {
+        padding: 4px 12px;
     }
 }
