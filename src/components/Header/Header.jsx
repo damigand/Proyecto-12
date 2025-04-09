@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 import "./Header.css";
 
-const links = [
+export const links = [
     {
         string: "Home",
         url: "/",
