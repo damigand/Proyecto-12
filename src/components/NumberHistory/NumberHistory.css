@@ -7,3 +7,15 @@
     gap: 10px;
     padding: 5px;
 }
+
+@media (max-width: 650px) {
+    .bingo-number-history {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        grid-template-rows: repeat(4, minmax(10px, 50px));
+        grid-template-columns: repeat(10, minmax(10px, 100%));
+        width: 100%;
+        gap: 4px;
+        padding: 1px;
+    }
+}

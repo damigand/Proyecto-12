@@ -1,5 +1,5 @@
 #mines {
-    width: 100%;
+    width: 90%;
     max-width: 770px;
     display: grid;
     grid-template-columns: minmax(200px, 2fr) 1fr;
@@ -8,4 +8,17 @@
     aspect-ratio: 7.7 / 5;
     max-height: 500px;
     color: var(--secondary);
+}
+
+@media (max-width: 600px) {
+    #mines {
+        max-width: 90%;
+        width: fit-content;
+        grid-template-rows: 2fr 2fr;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        height: 90%;
+        max-height: 100%;
+    }
 }

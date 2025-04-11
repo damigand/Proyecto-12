@@ -91,3 +91,11 @@
     animation-duration: var(--animation-duration);
     animation-iteration-count: infinite;
 }
+
+@media (max-width: 650px) {
+    .bingo-number-section {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        width: 100%;
+    }
+}

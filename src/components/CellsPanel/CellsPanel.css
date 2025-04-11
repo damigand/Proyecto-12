@@ -1,5 +1,4 @@
 .mine-panel {
-    width: 100%;
     border-radius: 5px;
     aspect-ratio: 1;
     position: relative;
@@ -29,4 +28,22 @@
     align-items: center;
     justify-content: center;
     z-index: 10;
+}
+
+@media (max-width: 600px) {
+    .mine-panel {
+        justify-self: center;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        max-height: fit-content;
+    }
+    .mine-panel:not(.playing) {
+        grid-row: 1 / 2;
+    }
+
+    .current-mine-game {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
 }

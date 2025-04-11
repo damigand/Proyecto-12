@@ -154,3 +154,28 @@ input[type="number"] {
 .loss {
     color: indianred;
 }
+
+@media (max-width: 600px) {
+    .squares-info {
+        padding: 5px;
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        aspect-ratio: 0;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        max-height: 150px;
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .mines-actions-end {
+        flex-direction: row;
+        width: 100%;
+        grid-column: 1 / 3;
+        font-size: 12px;
+
+        button {
+            font-size: 12px;
+        }
+    }
+}
