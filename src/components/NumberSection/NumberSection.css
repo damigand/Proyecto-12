@@ -4,7 +4,7 @@
     display: grid;
     grid-template-rows: 5fr 1fr;
     gap: 5px;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--secondary);
     border-radius: 5px;
 }
 
@@ -62,11 +62,10 @@
 
 .bingo-section-timer {
     position: relative;
-    border-radius: 5px;
 }
 
 .bingo-section-timer.active {
-    border: 1px solid var(--secondary);
+    border-top: 1px solid var(--secondary);
 }
 
 @keyframes timer {
@@ -84,7 +83,6 @@
     height: 100%;
     left: 0;
     background-color: var(--secondary);
-    border-radius: 5px;
     width: 0px;
 }
 

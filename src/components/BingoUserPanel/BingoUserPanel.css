@@ -8,7 +8,7 @@
 }
 
 .bingo-user-panel:not(.playing) {
-    border: 1px solid var(--primary);
+    border: 1px solid var(--secondary);
 }
 
 .bingo-user-numbers {
@@ -24,17 +24,17 @@
 .start-bingo-button {
     transition: all 0.2s ease;
     font-size: 24px;
-    color: var(--secondary);
+    color: var(--primary);
     background-color: transparent;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--primary);
     padding: 12px 24px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .start-bingo-button:hover {
-    color: white;
-    background-color: var(--secondary);
+    color: black;
+    background-color: var(--primary);
 }
 
 .bingo-user-finished {
