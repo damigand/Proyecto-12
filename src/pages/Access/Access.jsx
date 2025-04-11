@@ -13,7 +13,6 @@ const Access = () => {
         });
     };
 
-    console.log("Access render.");
     return (
         <>
             <div id="access" className={`${status.start ? "start" : ""}${status.active ? " active" : ""}`}>

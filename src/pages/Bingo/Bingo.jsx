@@ -7,12 +7,8 @@ import { initialState, reducer } from "./game";
 import useBingoTimer from "../../hooks/useBingoTimer";
 
 const Bingo = () => {
-    console.log("Bingo render.");
-
     const [state, dispatch] = useReducer(reducer, initialState);
     const [startBingoTimer, stopBingoTimer] = useBingoTimer(dispatch);
-
-    console.log(state);
 
     useEffect(() => {
         if (state.isPlaying) {

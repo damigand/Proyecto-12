@@ -6,10 +6,7 @@ import { SettingsContext } from "./components/SettingsProvider/SettingsProvider"
 import { useContext } from "react";
 
 function App() {
-    console.log("App render.");
-
     const { theme } = useContext(SettingsContext);
-    console.log(theme);
 
     const width = window.innerWidth;
 

@@ -21,12 +21,8 @@ const FormRegister = memo(() => {
 
     const onSubmit = (data, event) => {
         event.preventDefault();
-        console.log(data);
     };
 
-    console.log("errors:", errors);
-
-    console.log("Render FormRegister.");
     return (
         <div id="register">
             <div className="register-text">

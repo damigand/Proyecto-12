@@ -39,8 +39,6 @@ export const reducer = (state, action) => {
                 })
             };
 
-            console.log("clicked cell: ", clickedCell);
-
             //Si la casilla no estaba revelada cambiamos el estado.
             if (clickedCell.isHidden) {
                 newState.squaresCleared = state.squaresCleared + 1;

@@ -5,8 +5,6 @@ import { SettingsContext } from "../SettingsProvider/SettingsProvider.jsx";
 //Se usa memo para evitar re-renders cuando el usuario tacha números.
 
 const NumberSection = memo(({ current, previous, isPlaying, isFinished }) => {
-    console.log("NumberSection render.");
-
     const { bingoTimer } = useContext(SettingsContext);
 
     return (

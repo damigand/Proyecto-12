@@ -4,8 +4,6 @@ import { SettingsContext } from "../../components/SettingsProvider/SettingsProvi
 import { useContext, useEffect, useRef, useState } from "react";
 
 const Settings = () => {
-    console.log("Settings render.");
-
     const [timerError, setTimerError] = useState(false);
     const [saved, setSaved] = useState(false);
 
@@ -35,10 +33,14 @@ const Settings = () => {
     return (
         <div id="settings">
             <div className="settings-theme">
-                <button onClick={() => context.setTheme(false)} className={!context.theme && "active"}>
+                <button
+                    onClick={() => context.setTheme(false)}
+                    className={`main-button${!context.theme ? " active" : ""}`}>
                     <i className={`bx bx${!context.theme ? "s" : ""}-sun`}></i>Light mode
                 </button>
-                <button onClick={() => context.setTheme(true)} className={context.theme && "active"}>
+                <button
+                    onClick={() => context.setTheme(true)}
+                    className={`main-button${context.theme ? " active" : ""}`}>
                     <i className={`bx bx${context.theme ? "s" : ""}-moon`}></i>Dark mode
                 </button>
                 <div className="settings-bingo-timer">
@@ -48,7 +50,7 @@ const Settings = () => {
                         <span className={`input-error${timerError ? " active" : ""}`}>
                             No puede ser menor a 500 ms.
                         </span>
-                        <button type="button" className="save-bingo-timer" onClick={saveTimer}>
+                        <button type="button" className="save-bingo-timer main-button" onClick={saveTimer}>
                             {!saved && "Save"}
                             {saved && (
                                 <span className="settings-saved">

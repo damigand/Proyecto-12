@@ -3,10 +3,7 @@ import Cell from "../Cell/Cell";
 import { useCallback } from "react";
 
 const CellsPanel = ({ gameState, isPlaying, isWin, isLoss, isFinished, dispatch }) => {
-    console.log("Render MinesPanel.");
-
     const revealCell = useCallback((index, isMine) => {
-        console.log("isMine", isMine);
         if (isMine) {
             dispatch({
                 type: "LOSE_GAME",

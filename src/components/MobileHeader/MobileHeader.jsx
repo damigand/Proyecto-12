@@ -4,7 +4,6 @@ import { links } from "../Header/Header.jsx";
 import { useCallback, useState } from "react";
 
 const MobileHeader = () => {
-    console.log("Mobile Header render.");
     const [open, setOpen] = useState(false);
 
     const toggleOpen = useCallback(() => {

@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: var(--font-xl);
     border-radius: 5px;
     border: 1px solid var(--primary);
     color: var(--primary);

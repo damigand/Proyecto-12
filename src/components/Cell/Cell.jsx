@@ -2,7 +2,6 @@ import { memo } from "react";
 import "./Cell.css";
 
 const Cell = memo(({ mine, index, handleClick, delay, isFinished }) => {
-    console.log("Cell render: ", index);
     var icon = <i className="bx bx-question-mark icon"></i>;
 
     if (!mine.isHidden) {

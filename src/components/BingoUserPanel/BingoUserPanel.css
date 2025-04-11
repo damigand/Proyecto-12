@@ -96,4 +96,8 @@
         grid-column: 1 / 2;
         width: 100%;
     }
+
+    .bingo-user-numbers {
+        grid-template-rows: repeat(2, minmax(50px, 140px));
+    }
 }

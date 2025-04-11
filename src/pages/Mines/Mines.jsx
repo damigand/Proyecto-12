@@ -5,11 +5,7 @@ import { useReducer } from "react";
 import { reducer, initialState } from "./game";
 
 const Mines = () => {
-    console.log("Mines render.");
-
     const [state, dispatch] = useReducer(reducer, initialState);
-
-    console.log(state);
 
     return (
         <div id="mines">

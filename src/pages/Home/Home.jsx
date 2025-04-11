@@ -2,7 +2,6 @@ import { NavLink } from "react-router";
 import "./Home.css";
 
 const Home = () => {
-    console.log("Home render.");
     return (
         <ul id="home">
             <NavLink to={"/bingo"} className="bingo home-button">

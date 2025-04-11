@@ -4,8 +4,6 @@ import { useForm } from "react-hook-form";
 import FormSocials from "../FormSocials/FormSocials";
 
 const FormLogin = memo(() => {
-    console.log("Render FormLogin.");
-
     const {
         register,
         handleSubmit,
@@ -19,7 +17,6 @@ const FormLogin = memo(() => {
 
     const onSubmit = (data, event) => {
         event.preventDefault();
-        console.log(data);
     };
 
     return (

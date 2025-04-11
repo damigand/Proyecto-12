@@ -5,10 +5,6 @@ const maxMines = 24;
 
 const MinesActions = memo(
     ({ dispatch, isPlaying, isFinished, isWin, isLoss, squaresLeft, squaresCleared }) => {
-        console.log("Render MinesActions.");
-
-        console.log("loss", isLoss, "win", isWin);
-
         const inputRef = useRef(null);
 
         const setMines = useCallback(() => {
@@ -52,7 +48,7 @@ const MinesActions = memo(
                                 onChange={(e) => checkNumber(e)}
                             />
                         </label>
-                        <button type="button" className="play-mines-button" onClick={setMines}>
+                        <button type="button" className="play-mines-button main-button" onClick={setMines}>
                             Play
                         </button>
                     </div>
@@ -79,7 +75,9 @@ const MinesActions = memo(
                                     {(isWin && "YOU WIN!") || (isLoss && "YOU LOSE :(")}
                                 </h2>
                                 <div className="mines-actions-finished">
-                                    <button className="mines-again-button" onClick={() => playMinesAgain()}>
+                                    <button
+                                        className="mines-again-button main-button"
+                                        onClick={() => playMinesAgain()}>
                                         Play again
                                     </button>
                                 </div>

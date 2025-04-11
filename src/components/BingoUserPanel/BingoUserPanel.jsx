@@ -3,8 +3,6 @@ import "./BingoUserPanel.css";
 import BingoUserNumber from "../BingoUserNumber/BingoUserNumber";
 
 const BingoUserPanel = memo(({ dispatch, isPlaying, isBingo, userNumbers }) => {
-    console.log("BingoUserPanel render.");
-
     const toggle = () => {
         dispatch({
             type: "START_GAME"

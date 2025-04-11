@@ -30,7 +30,6 @@ export const links = [
 ];
 
 const Header = () => {
-    console.log("Header render.");
     return (
         <ul id="header">
             {links.map((link, index) => {
