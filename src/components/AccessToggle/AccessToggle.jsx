@@ -5,12 +5,12 @@ const AccessToggle = ({ handleClick }) => {
         <div className="toggle-container">
             <div className="toggle">
                 <div className="toggle-section">
-                    <h2>¿Eres nuevo?</h2>
-                    <button onClick={handleClick}>Registrarse</button>
+                    <h2>Are you new?</h2>
+                    <button onClick={handleClick}>Register</button>
                 </div>
                 <div className="toggle-right toggle-section">
-                    <h2>¿Ya tienes cuenta?</h2>
-                    <button onClick={handleClick}>Iniciar sesión</button>
+                    <h2>Already have an account?</h2>
+                    <button onClick={handleClick}>Log in</button>
                 </div>
             </div>
         </div>

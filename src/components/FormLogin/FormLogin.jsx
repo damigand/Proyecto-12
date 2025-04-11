@@ -66,7 +66,7 @@ const FormLogin = memo(() => {
                     ) : null}
                 </label>
                 <button type="submit" className="form-submit-button">
-                    Entrar
+                    Log in
                 </button>
             </form>
         </div>

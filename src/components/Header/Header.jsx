@@ -23,7 +23,7 @@ export const links = [
         class: "link-access"
     },
     {
-        string: "Ajustes",
+        string: "Settings",
         url: "settings",
         class: "link-settings"
     }

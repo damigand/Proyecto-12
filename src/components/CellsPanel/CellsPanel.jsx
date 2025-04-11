@@ -47,7 +47,7 @@ const CellsPanel = ({ gameState, isPlaying, isWin, isLoss, isFinished, dispatch 
                 <div className="mine-overlay">
                     {!isWin && !isLoss && (
                         <div className="mine-empty-overlay">
-                            <span>No hay minas... ¡De momento!</span>
+                            <span>There are no mines... yet!</span>
                         </div>
                     )}
                 </div>

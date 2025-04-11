@@ -49,11 +49,11 @@ const Settings = () => {
                             No puede ser menor a 500 ms.
                         </span>
                         <button type="button" className="save-bingo-timer" onClick={saveTimer}>
-                            {!saved && "Guardar"}
+                            {!saved && "Save"}
                             {saved && (
                                 <span className="settings-saved">
                                     <i className="bx bx-check"></i>
-                                    Guardado
+                                    Saved!
                                 </span>
                             )}
                         </button>

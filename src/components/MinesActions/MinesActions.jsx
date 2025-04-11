@@ -53,7 +53,7 @@ const MinesActions = memo(
                             />
                         </label>
                         <button type="button" className="play-mines-button" onClick={setMines}>
-                            Jugar
+                            Play
                         </button>
                     </div>
                 )}
@@ -75,7 +75,9 @@ const MinesActions = memo(
                         </div>
                         {isFinished && (
                             <div className="mines-actions-end">
-                                <h2 className={isLoss && "loss"}>{(isWin && "WIN") || (isLoss && "LOSS")}</h2>
+                                <h2 className={isLoss && "loss"}>
+                                    {(isWin && "YOU WIN!") || (isLoss && "YOU LOSE :(")}
+                                </h2>
                                 <div className="mines-actions-finished">
                                     <button className="mines-again-button" onClick={() => playMinesAgain()}>
                                         Play again

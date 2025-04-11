@@ -89,7 +89,7 @@ const FormRegister = memo(() => {
                     ) : null}
                 </label>
                 <button type="submit" className="form-submit-button">
-                    Registrarse
+                    Register
                 </button>
             </form>
         </div>
