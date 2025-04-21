@@ -12,7 +12,7 @@ function App() {
 
     return (
         <div id="app" className={theme === true ? "dark" : undefined}>
-            <header>{innerWidth > 520 ? <Header /> : <MobileHeader />}</header>
+            <header>{width > 520 ? <Header /> : <MobileHeader />}</header>
             <main>
                 <Outlet />
             </main>
